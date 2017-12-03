@@ -43,7 +43,7 @@
               <div class="line"></div>
             </div>
             <ul v-if="seller.supports" class="supports">
-              <li v-for="(item, index) in seller.supports" class="support-item" key="index">
+              <li v-for="(item, index) in seller.supports" class="support-item" :key="index">
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -113,7 +113,7 @@
         display: inline-block;
         vertical-align: top;
         img {
-          border-radius: 2px;
+          border-radius: 4px;
         }
       }
       .content {

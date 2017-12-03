@@ -4,6 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router/index';
 import axios from 'axios';
+
 import 'common/css/index.scss';
 
 Vue.config.productionTip = false;
@@ -13,6 +14,5 @@ Vue.prototype.$http = axios;
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  render: h => h(App)
 });
