@@ -237,7 +237,7 @@
         if (this.totalPrice < this.minPrice) {
           return;
         } else {
-          window.alert(`请支付${this.totalPrice}元`);
+          window.alert(`请支付${this.totalPrice + this.deliveryPrice}元`);
         }
         ;
       }
@@ -315,12 +315,12 @@
         .price {
           display: inline-block;
           vertical-align: top;
-          margin-top: 12px;
+          margin-top: 13px;
           line-height: 24px;
           padding-right: 12px;
           box-sizing: border-box;
           border-right: 1px solid rgba(255, 255, 255, 0.1);
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 700;
           &.highlight {
             color: #fff;
@@ -331,17 +331,17 @@
           vertical-align: top;
           line-height: 24px;
           margin: 12px 0 0 12px;
-          font-size: 10px;
+          font-size: 12px;
         }
       }
       .content-right {
         flex: 0 0 105px;
         width: 105px;
         .pay {
-          height: 48px;
-          line-height: 48px;
+          height: 50px;
+          line-height: 50px;
           text-align: center;
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 700;
           background: #2b333b;
           &.not-enough {

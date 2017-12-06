@@ -132,6 +132,7 @@
             background-repeat: no-repeat;
           }
           .name {
+            vertical-align: top;
             margin-left: 6px;
             font-size: 16px;
             line-height: 18px;

@@ -9,7 +9,11 @@
   const CLS_ON = 'on';
   const CLS_HALF = 'half';
   const CLS_OFF = 'off';
-
+  // star 组件思路
+  // 1. 接受两个来自父组件的值：星星大小size，评分score
+  // 2. 根据size选择不同的class: starType
+  // 3. 根据score计算数字转换成三种状态的star：on/ half/ off，依次组成数量为LENGTH的数组
+  // 4. 并v-for遍历itemClasses，5个列表依次有不同的class值，渲染不同的star
   export default {
     props: {
       size: {

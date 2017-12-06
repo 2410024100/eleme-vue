@@ -16,7 +16,8 @@
           <li v-for="(item, index) in goods" :key="index" class="food-list" ref="foodList">
             <h1 class="title">{{item.name}}</h1>
             <ul>
-              <li v-for="(food,index) in item.foods" :key="index" class="food-item border-1px">
+              <li @click="selectFood(food)" v-for="(food,index) in item.foods" :key="index"
+                  class="food-item border-1px">
                 <div class="icon">
                   <img :src="food.icon" width="70" height="70" alt="">
                 </div>
@@ -42,6 +43,7 @@
       <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice"
                 :minPrice="seller.minPrice"></shopcart>
     </div>
+    <food @add="addFood" :food="selectedFood" ref="food"></food>
   </div>
 </template>
 
@@ -49,6 +51,7 @@
   import BScroll from 'better-scroll';
   import shopcart from 'components/shopcart/shopcart.vue';
   import cartcontrol from 'components/cartcontrol/cartcontrol.vue';
+  import food from 'components/food/food.vue';
 
   const ERR_OK = 0;
 
@@ -62,7 +65,8 @@
       return {
         goods: [],
         listHeight: [],
-        scrollY: 0
+        scrollY: 0,
+        selectedFood: {}
       };
     },
     computed: {
@@ -114,7 +118,7 @@
           click: true,
           probeType: 3      // 设定BS 实时监测滚动位置
         });
-        this.foodsScroll.on('scroll', (position) => {
+        this.foodsScroll.on('scroll', (position) => {   // 这里要用箭头函数绑定this
           // 判断滑动方向，避免下拉时分类高亮错误（如第一分类商品数量为1时，下拉使得第二分类高亮）
           if (position.y <= 0) {
             this.scrollY = Math.abs(Math.round(position.y));
@@ -141,13 +145,18 @@
       _drop(target) {
         // 体验优化，异步执行下落动画
         this.$nextTick(() => {
-          this.$refs.shopcart.drop(target); // 父组件访问子组件的方式
+          this.$refs.shopcart.drop(target); // 父组件访问子组件的方式，调用子组件的方法，传值
         });
+      },
+      selectFood(food, event) {
+        this.selectedFood = food;
+        this.$refs.food.show();
       }
     },
     components: {
       shopcart,
-      cartcontrol
+      cartcontrol,
+      food
     }
   };
 </script>
