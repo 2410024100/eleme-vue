@@ -6,7 +6,7 @@
 <div align=center>为了更好的体验，请用开发者工具模拟移动端体验</div>
 <br>
 <div align=center>
-<img src="https://nanyang24.github.io/eleme-vue/img/eleme-vue.png" width="20%">
+<img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/eleme-vue.png" width="20%">
 <div>扫二维码在手机上查看</div>
 <div>效果更好</div>
 </div>
@@ -14,10 +14,12 @@
 ## 项目截图
 
 <div align=center>
-	<img src="https://nanyang24.github.io/eleme-vue/img/ele1.png" width="25%">
-	<img src="https://nanyang24.github.io/eleme-vue/img/ele2.png" width="25%">
-  <img src="https://nanyang24.github.io/eleme-vue/img/ele3.png" width="25%">
+	<img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele1.png" width="25%">
+	<img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele2.png" width="25%">
+  <img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele3.png" width="25%">
 </div>
+
+> 服务器身在国外，网络可能会有波动
 
 ## 主要技术栈
 
