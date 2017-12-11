@@ -4,7 +4,7 @@
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
           <li v-for="(item, index) in goods" :key="index" class="menu-item" :class="{'current': currentIndex === index}"
-              @click="selectMenu(index)">
+              @click="selectMenu(index, $event)">
           <span class="text border-1px">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -16,7 +16,7 @@
           <li v-for="(item, index) in goods" :key="index" class="food-list" ref="foodList">
             <h1 class="title">{{item.name}}</h1>
             <ul>
-              <li @click="selectFood(food)" v-for="(food,index) in item.foods" :key="index"
+              <li @click="selectFood(food, $event)" v-for="(food,index) in item.foods" :key="index"
                   class="food-item border-1px">
                 <div class="icon">
                   <img :src="food.icon" width="70" height="70" alt="">
@@ -134,7 +134,10 @@
           this.listHeight.push(height);
         }
       },
-      selectMenu(index) {
+      selectMenu(index, event) {
+        if (!event._constructed) {
+          return;
+        }
         let foodList = this.$refs.foodList;
         let el = foodList[index];
         this.foodsScroll.scrollToElement(el, 300);   // BS接口，滚动至
@@ -149,6 +152,9 @@
         });
       },
       selectFood(food, event) {
+        if (!event._constructed) {
+          return;
+        }
         this.selectedFood = food;
         this.$refs.food.show();
       }
@@ -247,13 +253,13 @@
           }
           .icon {
             flex: 0 0 57px;
-            margin-right: 10px;
             img {
               border-radius: 2px;
             }
           }
           .content {
             flex: 1;
+            margin-left: 10px;
             .name {
               margin: 2px 0 8px 0;
               font-size: 16px;
@@ -261,6 +267,10 @@
               line-height: 14px;
               color: rgb(7, 17, 27);
               font-weight: 500;
+              width: 136px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
             .desc, .extra {
               line-height: 10px;

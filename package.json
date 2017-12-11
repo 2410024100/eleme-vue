@@ -1,7 +1,7 @@
 {
   "name": "eleme-vue",
   "version": "1.0.0",
-  "description": "A copy of eleme app built with Vue",
+  "description": "A copy of eleme app built with Vue2.0",
   "author": "NanYang <nanyang24@hotmail.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -71,5 +71,13 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanyang24/eleme-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nanyang24/eleme-vue/issues"
+  },
+  "homepage": "https://github.com/nanyang24/eleme-vue#readme"
 }

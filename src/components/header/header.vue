@@ -311,19 +311,19 @@
                 background-size: 16px 16px;
                 background-repeat: no-repeat;
                 &.decrease {
-                  @include bg-img('decrease_2')
+                  @include bg-img('decrease_2');
                 }
                 &.discount {
-                  @include bg-img('discount_2')
+                  @include bg-img('discount_2');
                 }
                 &.guarantee {
-                  @include bg-img('guarantee_2')
+                  @include bg-img('guarantee_2');
                 }
                 &.invoice {
-                  @include bg-img('invoice_2')
+                  @include bg-img('invoice_2');
                 }
                 &.special {
-                  @include bg-img('special_2')
+                  @include bg-img('special_2');
                 }
               }
               .text {

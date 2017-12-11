@@ -278,6 +278,10 @@
           box-sizing: border-box;
           border-radius: 50%;
           background: #141d27;
+          @media only screen and (max-width: 320px) {
+            margin-left: 6px;
+            margin-right: 0px;
+          }
           .num {
             position: absolute;
             top: 0;
@@ -322,6 +326,9 @@
           border-right: 1px solid rgba(255, 255, 255, 0.1);
           font-size: 18px;
           font-weight: 700;
+          @media only screen and (max-width: 320px) {
+            padding-right: 6px;
+          }
           &.highlight {
             color: #fff;
           }
@@ -332,11 +339,19 @@
           line-height: 24px;
           margin: 12px 0 0 12px;
           font-size: 12px;
+          @media only screen and (max-width: 320px) {
+            margin: 12px 0 0 6px;
+            font-size: 10px;
+          }
         }
       }
       .content-right {
         flex: 0 0 105px;
         width: 105px;
+        @media only screen and (max-width: 320px) {
+          flex: 0 0 95px;
+          width: 95px;
+        }
         .pay {
           height: 50px;
           line-height: 50px;
