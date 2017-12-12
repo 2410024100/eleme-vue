@@ -11,6 +11,8 @@
 <div>效果更好</div>
 </div>
 
+> 服务器身在国外，网络可能会有波动
+
 ## 项目截图
 
 <div align=center>
@@ -18,8 +20,6 @@
 	<img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele2.png" width="25%">
   <img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele3.png" width="25%">
 </div>
-
-> 服务器身在国外，网络可能会有波动
 
 ## 主要技术栈
 
@@ -29,15 +29,15 @@
 - axios 进行数据请求
 - webpack 打包项目文件
 - ES6 + ESlint
-- flex弹性布局
+- flex 弹性布局
 - SCSS 编写样式
-- Vue过渡动画
-- 联动滚动借助了better-scroll插件
+- Vue 过渡动画
+- 联动滚动借助了 better-scroll 插件
 - localStorage 本地数据存取
 
 ## 实现功能
 
--  Goods、Ratings、Seller 组件视图均可上下滚动
+- Goods、Ratings、Seller 组件视图均可上下滚动
 - 商品页 点击左侧menu，右侧list对应跳转到相应位置
 - 点击list查看商品详情页，父子组件的通信
 - 评论内容可以筛选查看
@@ -46,6 +46,11 @@
 - loaclStorage 缓存商家信息（id、name）
 
 ## 组件关系
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/nanyang24/eleme-vue/master/img/ele4.png" width="50%">
+</div>
+
 ```
 ├──app.vue
   │  ├──header.vue--头部组件
@@ -80,7 +85,10 @@ main.js---- 入口文件的 js 逻辑，在 webpack 打包之后将被注入到 
 ## 项目总结
 
 想写的详细一点，另开一篇
-[项目总结 & 问题]()
+
+### [项目总结 & 问题](https://github.com/nanyang24/eleme-vue/blob/master/conclusion.md)
+
+#### 如果觉得对您有帮助，您可以在右上角给我个star支持一下，谢谢！
 
 ## 项目运行
 
@@ -97,3 +105,4 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+
