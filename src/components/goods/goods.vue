@@ -4,7 +4,7 @@
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
           <li v-for="(item, index) in goods" :key="index" class="menu-item" :class="{'current': currentIndex === index}"
-              @click="selectMenu(index, $event)">
+              @click="selectMenu(index, $event)" ref="menuList">
           <span class="text border-1px">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -75,7 +75,7 @@
           let height1 = this.listHeight[i];
           let height2 = this.listHeight[i + 1];
           if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {  // 如果最后一个height不存在，直接返回i
-//            this._followScroll(i);
+            this._followScroll(i);
             return i;
           }
         }
@@ -157,6 +157,11 @@
         }
         this.selectedFood = food;
         this.$refs.food.show();
+      },
+      _followScroll(index) {
+        let menuList = this.$refs.menuList;
+        let el = menuList[index];
+        this.meunScroll.scrollToElement(el, 300);
       }
     },
     components: {
@@ -246,10 +251,12 @@
         }
         .food-item {
           display: flex;
-          padding: 12px;
+          margin: 12px;
+          padding-bottom: 12px;
           @include border-1px(rgba(7, 17, 27, 0.1));
           &:last-child {
             @include border-none();
+            margin-bottom: 0px;
           }
           .icon {
             flex: 0 0 57px;
